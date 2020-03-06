@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang=\es\>
+ <head>
+ <style>
+body {background-color: rgb(160, 0, 53);}\
+h1   {color: white;text-align:center;}
+p    {color: white; text-align:center;}
+div  {color: white; text-align:center;}
+Email {text-align:center;}
+input {text-align:center;}
+button {text-align:center;}
+</style>
+   <meta charset=\utf-8\>
+   <meta name=\viewport\ content=\width=device-width, initial-scale=1\>
+ </head>
+ <body>
+         <h1><center>Smart Security Door</center></h1>
+         <p><center>Type your Email</center></p>
+         <div>Email: <input type='text' name='pass_word' id='pass_word' align='center' size=10 autofocus></div> 
+         <p><center>Type your Password</canter></p>
+         	<div>Password: <input type='text' name='pass_word' id='pass_word' align='center' size=10 autofocus></div><br>
+         <button id="save_button"><center>Log In</center></button>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>    <script>
+     var pass;
+     $('#save_button').click(function(e){
+       e.preventDefault();
+       pass = $('#pass_word').val();\        
+       $.get('/save?pass=' + pass, function(data){
+         console.log(data);
+       });
+     });     
+   </script>
+ </body>
+</html>
+ 
