@@ -2,11 +2,13 @@
 <html lang=\es\>
  <head>
  <style>
-body {background-color: rgb(160, 0, 53);}\
-h1   {color: white;text-align:center;}
+body {background-image: url('Captura.png'); background-position: center; background-repeat: no-repeat; padding: 120px;-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;}
+h1   {color: black;text-align:center;}
 p    {color: white; text-align:center;}
 div  {color: white; text-align:center;}
-Email {text-align:center;}
 input {text-align:center;}
 button {text-align:center;}
 </style>
@@ -22,6 +24,16 @@ button {text-align:center;}
          <p><center>Type your Password</canter></p>
          	<div>Password: <input type='text' name='pass_word' id='pass_word' align='center' size=10 autofocus></div><br>
          <button id="save_button"><center>Log In</center></button>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>    <script>
+     var pass;
+     $('#save_button').click(function(e){
+       e.preventDefault();
+       pass = $('#pass_word').val();\        
+       $.get('/save?pass=' + pass, function(data){
+         console.log(data);
+       });
+     });     
+   </script>
  </body>
 </html>
  
